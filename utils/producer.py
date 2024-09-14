@@ -52,7 +52,9 @@ def send_task(method, body, exchange_name, queue_name, routing_key):
         if connection:
             connection.close()
 
-
+# def checkFucntion():
+#     data = {"message": "hello world"}
+#     return data
 
 ################################################# simple setup for producer ###############################
 

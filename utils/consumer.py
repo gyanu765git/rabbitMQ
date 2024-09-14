@@ -1,6 +1,7 @@
 import pika
 import logging
 from dotenv import load_dotenv
+# from entry.models import CollectData
 
 load_dotenv()
 
@@ -28,7 +29,7 @@ def callback(ch, method, properties, body):
     try:
         logger.info(f"Received message: {body.decode()}")
         # Process the message here
-
+        # CollectData.objects.create(record = body)
         # Acknowledge the message
         ch.basic_ack(delivery_tag=method.delivery_tag)
     except Exception as e:
@@ -62,7 +63,7 @@ def consume_task(queue_name):
         if connection:
             connection.close()
 
-
+consume_task('test_queue')
 
 #########################basic consumer###################
 # import pika
