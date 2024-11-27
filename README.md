@@ -47,3 +47,6 @@ sudo ufw allow 5672 && sudo ufw reload
 sudo ufw status verbose
 
 sudo ufw allow 15672 && sudo ufw reload
+
+check in the browser if its running: 
+http://localhost:15672/
